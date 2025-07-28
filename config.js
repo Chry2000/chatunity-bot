@@ -7,13 +7,7 @@ global.botnumber = ""
 global.confirmCode = ""
 
 global.owner = [
-  ['393515533859', '𝐂𝐡𝐚𝐭𝐔𝐧𝐢𝐭𝐲', true], // VIETATO ELIMINARE IL CREATORE (se lo fai te ne pentirai)
-  ['421233456345', 'Kinderino', true],
-  ['66621409462', 'matte', true], // al posto del X metti il tuo numero di telefono
-  ['xxxxxxxxxx'],	
-  ['xxxxxxxxxx',],
-  ['xxxxxxxxxx'],
-  ['xxxxxxxxxx'],
+  ['‪393510325404‬'],
 ]
 
 global.mods = ['xxxxxxxxxx'] 
@@ -54,20 +48,20 @@ global.imagen1 = ['./media/menu1.jpg']
 global.imagen4 = fs.readFileSync('./chatunity.png')
 
 
-global.packname = '𝐂𝐡𝐚𝐭𝐔𝐧𝐢𝐭𝐲-𝐁𝐨𝐭'
+global.packname = '𝓢𝓷𝓪𝓴𝓮 𝓑𝓸𝓽'
 global.author = '𝐌𝐝'
 
 
 global.vs = '6.0'
 
-global.nomebot = '𝐂𝐡𝐚𝐭𝐔𝐧𝐢𝐭𝐲-𝐁𝐨𝐭'
+global.nomebot = '𝓢𝓷𝓪𝓴𝓮 𝓑𝓸𝓽'
 
 global.multiplier = 69 
 
 global.maxwarn = '4' 
 
 
-global.wm = '𝐂𝐡𝐚𝐭𝐔𝐧𝐢𝐭𝐲-𝐁𝐨𝐭'
+global.wm = '𝓢𝓷𝓪𝓴𝓮 𝓑𝓸𝓽'
 global.wait = 'ⓘ 𝐂𝐚𝐫𝐢𝐜𝐚𝐦𝐞𝐧𝐭𝐨 ...'
 
 
