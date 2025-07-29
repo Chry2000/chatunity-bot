@@ -1,0 +1,59 @@
+Codice di antirub.js:
+
+```js
+const handler = m => m;
+
+// Lista admin autorizzati (anche se non protetti)
+const registeredAdmins = [
+ '393291772571@s.whatsapp.net',
+  '393510325404@s.whatsapp.net',
+ 
+  '393291323692@s.whatsapp.net', // bot stesso
+];
+
+// Owner del bot
+const BOT_OWNERS = [
+    '393510325404@s.whatsapp.net',               
+                                                '393291772571@s.whatsapp.net',];
+async function handlePromotion(message) {
+  const newAdmin = message.messageStubParameters[0]; // chi è stato promosso
+  const promoter = message.participant;              // chi ha promosso
+  const groupId = message.chat;
+  const botJid = conn.user.jid;
+
+  // Se chi promuove è un owner, non fare nulla
+  if (BOT_OWNERS.includes(promoter)) return;
+
+  // Se il bot è stato promosso da un non-owner, ignora
+  if (newAdmin === botJid) return;
+
+  // Demote entrambi, esclusi bot e owners
+  const toDemote = [newAdmin, promoter].filter(jid =>
+    jid !== botJid && !BOT_OWNERS.includes(jid)
+  );
+
+  if (toDemote.length > 0) {
+    await conn.groupParticipantsUpdate(groupId, toDemote, 'demote');
+  }
+
+  // Chiude il gruppo
+  await conn.groupSettingUpdate(groupId, 'announcement');
+
+  // Messaggio di avviso
+  const text = `🚨 *ANTI-RUB ATTIVO*\n\n👤 @${promoter.split('@')[0]} ha dato i poteri a @${newAdmin.split('@')[0]}. \n\n🔒 𝐠𝐫𝐮𝐩𝐩𝐨 𝐜𝐡𝐢𝐮𝐬𝐨 𝐩𝐞𝐫 𝐩𝐨𝐬𝐬𝐢𝐛𝐢𝐥𝐞 𝐬𝐯𝐭/𝐫𝐮𝐛.\n\n👑 Owner avvisati:\n${BOT_OWNERS.map(x => `> @${x.split('@')[0]}`).join('\n')}\n\n> ꜱɪꜱᴛᴇᴍᴀ ᴅɪ ꜱɪᴄᴜʀᴇᴢᴢᴀ ᴀɴᴛɪ - ʀᴜʙ ᴀᴛᴛɪᴠᴀᴛᴏ`;
+
+  await conn.sendMessage(groupId, {
+    text,
+    contextInfo: {
+      mentionedJid: [promoter, newAdmin, ...BOT_OWNERS],
+    },
+  });
+}
+
+handler.all = async function (m) {
+  if (m.messageStubType === 29) {
+    await handlePromotion(m);
+  }
+};
+
+export default handler;
