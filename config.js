@@ -5,13 +5,14 @@ import { fileURLToPath } from 'url'
 
 global.botnumber = ""
 global.confirmCode = ""
-
 global.owner = [
-  ['‪393291772571‬'], '𝐂𝐡𝐚𝐭𝐔𝐧𝐢𝐭𝐲', true], // VIETATO ELIMINARE IL CREATORE (se lo fai te ne pentirai)
+  ['393291772571', '𝐂𝐡𝐚𝐭𝐔𝐧𝐢𝐭𝐲', true], // creatore
   ['xxxxxxxxxx'],	
-  ['xxxxxxxxxx',],
   ['xxxxxxxxxx'],
   ['xxxxxxxxxx'],
+  ['xxxxxxxxxx']
+]
+
 
 
 global.mods = ['xxxxxxxxxx'] 
