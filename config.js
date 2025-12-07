@@ -12,7 +12,7 @@ global.owner = [
   ['xxxxxxxxxx',],
   ['xxxxxxxxxx'],
   ['xxxxxxxxxx'],
-]
+
 
 global.mods = ['xxxxxxxxxx'] 
 global.prems = ['xxxxxxxxxx', 'xxxxxxxxxx']
